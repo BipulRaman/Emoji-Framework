@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Emoji Reference</title>
+    <meta name="description"
+        content="CSS Framework Developed by Bipul Raman & Emoji provided free by EmojiOne http://emojione.com">
+    <link rel="stylesheet"
+        href="./emojifx.1.0.min.css">
+    <style>
+        button,
+        textarea {
+            float: left;
+        }
+
+        #main {
+            width: 810px;
+            height: 400px;
+            overflow: scroll;
+        }
+
+        body {
+            font-family: Calibri
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <span>Emoji Framework: <a
+                href="https://github.com/bipulraman/Emoji-Framework">https://github.com/bipulraman/Emoji-Framework</a></span><br />
+        <span>Click on Emoji to generate code</span>
+        <hr />
+    </div>
+    <style>
+        #mainbox {
+            width: 100%;
+            height: 400px;
+            overflow-y: scroll;
+        }
+
+        #output {
+            font-family: consolas;
+            line-height: 1;
+            font-size: 10pt;
+            overflow-y: scroll;
+        }
+    </style>
+    <div id="mainbox"></div><br />
+    <div id="demobox">Output: </div>
+    <div><textarea id="output" rows="4" style="width: 100%;"></textarea><br />
+        <button class="btn" onclick="clearAll()" style="width: 80px; margin-top: 10px;">Clear All</button></div>
+    <script type="text/javascript">
+        function reply_click(code) {
+            val = document.getElementById("output").value;
+            document.getElementById("output").value = val + code;
+            document.getElementById("demobox").innerHTML = val + code;
+        }
+        function pad(d) {
+            return (d < 10) ? '0' + d.toString() : d.toString();
+        }
+        var outputHTML = "";
+        for (var i = 1; i <= 42; i++) {
+            for (var j = 1; j <= 43; j++) {
+                if (j > 26 && i == 43)
+                    break;
+                outputHTML += "<button onClick='reply_click(this.innerHTML)'><i class='em e" + pad(i) + pad(j) + "'></i></button>";
+            }
+        }
+        document.getElementById("mainbox").innerHTML = outputHTML;
+        function clearAll() {
+            document.getElementById("output").value = "";
+            document.getElementById("demobox").innerHTML = "Output:";
+        }           
+    </script>
+</body>
+
+</html>
