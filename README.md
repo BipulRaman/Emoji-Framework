@@ -1,5 +1,5 @@
 # Emoji-Framework
-![Emoji Icons](https://raw.githubusercontent.com/bipulraman/Emoji-Framework/master/Img/sample.png)
+😊😂🤔🎉🎊
 
 Emoji Framework is CSS based Emoji which can be added into HTML Tags. 
 > User Manual:
